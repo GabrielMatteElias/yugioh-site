@@ -1,0 +1,29 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10.4rem;
+
+    background-color: #222222;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+}
+
+.header-options {
+    width: 45rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.header-options a{
+    color: #f2f2f2;
+    font-size: 1.6rem;
+    text-decoration: none;
+    font-weight: 600;
+}

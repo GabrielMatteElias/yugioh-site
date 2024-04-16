@@ -1,0 +1,247 @@
+/* ===== // ===== // Fundo ===== // ===== //*/
+.login {
+  display: flex;
+  justify-content: center;
+  box-shadow: rgb(85, 116, 131) 0px 0px 80px 0px inset;
+  height: 100vh;
+  background-color: rgb(245, 252, 255);
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(245, 252, 255);
+}
+
+.input-login:-webkit-autofill,
+.input-login:-webkit-autofill:hover,
+.input-login:-webkit-autofill:focus,
+.input-login:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #557483 inset !important;
+  -webkit-text-fill-color: white !important;
+}
+
+.agrupador-input-login {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  padding: 11.8rem 9.8rem;
+}
+
+.titulo-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: azure;
+  margin-left: 0.7rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.agrupador-input-login input {
+  outline: none;
+  width: 24rem;
+  padding-left: 1rem;
+  font-size: 1.6rem;
+  border: none;
+  box-sizing: border-box;
+  height: 4.8rem;
+  border-bottom: solid 3px #ffffff9d;
+  background-color: #55748300;
+  color: #ffff;
+}
+
+.agrupador-input-login input:focus {
+  border-bottom: solid 3px #ffffff2c;
+}
+
+.agrupador-input-login input::placeholder {
+  color: #fff;
+}
+
+.titulo-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: azure;
+}
+
+.login div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-hoepers {
+  position: fixed;
+  top: 110px;
+  left: 132px;
+  width: 179px;
+}
+
+.container-principal-login {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  background-color: #557483;
+  border-radius: 0.8rem;
+  height: 60%;
+  padding: 0.7rem;
+  width: 66.6rem;
+  box-shadow: 0px 4px 15px 15px #55748336;
+  position: relative;
+}
+
+#mensagem-erro-login {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+  color: #ffffff;
+  position: absolute;
+  bottom: 1px;
+}
+
+.css-1fuz9qr-MuiPaper-root-MuiAlert-root .MuiAlert-icon {
+  color: #ef7c00 !important;
+}
+
+.css-1fuz9qr-MuiPaper-root-MuiAlert-root {
+  background-color: #ffffff00 !important;
+  color: rgba(0, 0, 0, 0.87);
+  -webkit-transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 4px;
+  box-shadow: none;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 6px 16px;
+  color: rgb(1, 67, 97);
+}
+
+.footer-login {
+  position: fixed;
+}
+
+#mensagem-erro-login {
+  background-color: transparent;
+}
+
+.erro-senha {
+  font-size: 1.4rem;
+  color: #ffffff !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: transparent;
+}
+
+.css-1vooibu-MuiSvgIcon-root {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-size: inherit;
+}
+
+.logo-hoepers-login {
+  width: 5.6rem;
+  height: 6.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.hoepers {
+  margin-top: 0;
+  margin-bottom: 0 !important;
+  font-size: 4.8rem;
+  font-weight: bold;
+  line-height: 1.2;
+  color: #fff;
+  margin-left: 0.3rem;
+}
+
+.agrupador-botao {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.agrupador-botao button {
+  width: 18rem;
+  height: 4.8rem !important;
+  border-radius: 10px;
+  border: 0 none;
+  height: 2rem;
+  background-color: #fff;
+  color: #557483;
+  transition: 1s;
+  font-size: medium;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.agrupador-botao button:hover {
+  border-radius: 10px;
+  border: 0 none;
+  background-color: #ef7c00;
+  color: #ffff;
+  cursor: pointer;
+  align-items: center;
+}
+
+.agrupador-botao button:active {
+  box-shadow: #682a0f 0 3px 7px inset;
+
+  background-color: #8b4a04;
+}
+
+.agrupador-botao button:disabled {
+  opacity: 0.5;
+}
+
+.agrupador-botao button:disabled:hover {
+  background-color: #ffff;
+  cursor: not-allowed;
+  color: #557483;
+}
+
+.agrupador-botao button:disabled:active {
+  box-shadow: none;
+
+  background-color: #ef7c00;
+  cursor: not-allowed;
+}
+
+.container-icone {
+  background-color: #fff;
+  border-radius: 0.8rem;
+  box-shadow: rgb(85, 116, 131) 0px 0px 10px 0px inset;
+  height: 98%;
+  margin-right: 0.3rem;
+  width: 21.1rem;
+}
+
+.logo-sahtec {
+  width: 71.3%;
+}

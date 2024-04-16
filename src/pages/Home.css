@@ -1,0 +1,21 @@
+.bg-home-first-section {
+  background-image: url('../img/background-home.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+
+}
+
+.inner {
+  position: relative;
+  height: calc(100% - 8rem);
+  padding: 4rem 0;
+}
+
+.slideshow {
+  position: relative;
+  max-width: 100%;
+  height: 59rem;
+  margin: 0 auto;
+}
