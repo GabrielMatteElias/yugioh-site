@@ -2,13 +2,6 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 
 export default class Api {
-    constructor() {
-        this.porta = process.env.REACT_APP_PORTA_BKD || '443';
-        this.servidor = process.env.REACT_APP_SERVER || 'servidorhomolog.hoepers.com';
-        this.axios = axios.create({ baseURL: `https://${this.servidor}:${this.porta}/v1` })
-        
-    }
-
     async login(usuario, senha) {
         try {
 
@@ -59,19 +52,11 @@ export default class Api {
         }
     }
 
-    async atendimento_pda_atualizar_proposta(payload) {
-
+    async getCards() {
         try {
-            const resposta = await this.axios.post('/atendimento/pda/atualizar-status', payload,
-                {
-                    headers: {
-                        'Content-Type': 'application/json',
-                        "Authorization": `Bearer ${sessionStorage.getItem('token')}`
-                    },
-                    timeout: 30000 //30 segundos
-                })
+            const resposta = await axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
             if (resposta && resposta.data) {
-                return resposta.data
+                return resposta.data.data
             }
         } catch (error) {
             if (error.code === 'ECONNABORTED') {
@@ -85,7 +70,6 @@ export default class Api {
                 // outras exceções
                 Swal.fire({
                     icon: 'error',
-
                     text: 'Sessão expirada favor logar novamente!',
                     confirmButtonColor: "#ef7c00",
                 }).then(function () {

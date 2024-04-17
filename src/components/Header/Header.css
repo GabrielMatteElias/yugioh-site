@@ -5,8 +5,9 @@
     height: 10.4rem;
 
     background-color: #222222;
+    border-bottom: 1px solid #f2f2f27e;
 
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
@@ -27,3 +28,10 @@
     text-decoration: none;
     font-weight: 600;
 }
+
+.header-options a:hover{
+    filter: drop-shadow(0px 0px 10px #fff);
+    transform: scale(1.1);
+    font-size: 1.8rem;
+}
+

@@ -1,21 +1,37 @@
 .bg-home-first-section {
   background-image: url('../img/background-home.jpg');
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-position: center;
   background-size: cover;
-
+  height: 60rem;
+  z-index: -100;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
-.inner {
-  position: relative;
-  height: calc(100% - 8rem);
-  padding: 4rem 0;
+.carousel-cards {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.slideshow {
-  position: relative;
-  max-width: 100%;
-  height: 59rem;
-  margin: 0 auto;
+.carousel-cards .info {
+  color: #f2f2f2;
+  font-size: 1.6rem;
+  letter-spacing: 0.1rem;
+  line-height: 1.8rem;
+
+  margin-left: 4rem;
+  padding-top: 0.5rem;
+
+  height: 41.2rem;
+  max-width: 40rem;
+}
+
+.carousel-cards .info p {
+  padding-top: 1rem;
+  font-weight: 400;
 }

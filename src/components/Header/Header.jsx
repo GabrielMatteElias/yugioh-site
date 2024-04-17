@@ -14,14 +14,14 @@ const MenuSuperior = (props) => {
             <nav>
                 <ul className='header-options'>
                     <li>
-                        <Link>
+                        <Link to={'/produtos'}>
                             PRODUTOS
                         </Link>
 
                     </li>
                     <li>
 
-                        <Link>
+                        <Link to={'/explorar'}>
                             EXPLORAR
                         </Link>
                     </li>

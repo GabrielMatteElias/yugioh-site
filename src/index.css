@@ -21,3 +21,7 @@
 .css-s18byi{
   overflow: visible !important;
 }
+
+li{
+  list-style-type: none;
+}

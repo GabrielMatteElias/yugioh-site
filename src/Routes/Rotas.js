@@ -5,6 +5,7 @@ import RotasProtegidas from "./RotasProtegidas";
 import Login from "../pages/Login"
 import Home from "../pages/Home"
 import Produtos from "../pages/Produtos"
+import Explorar from "../pages/Explorar"
 
 
 
@@ -15,6 +16,8 @@ const Rotas = () => {
                 <Route path="/login" element={<Login />} />
                 <Route path="/" element={<RotasProtegidas> <Home /> </RotasProtegidas>} />
                 <Route path="/produtos" element={<RotasProtegidas> <Produtos /> </RotasProtegidas>} />
+                <Route path="/explorar" element={<RotasProtegidas> <Explorar /> </RotasProtegidas>} />
+
             </Routes>
         </BrowserRouter >
     )
