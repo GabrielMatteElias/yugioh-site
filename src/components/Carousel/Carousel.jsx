@@ -14,7 +14,7 @@ const CarouselComponent = (props) => {
     }
 
     return (
-        <Carousel autoPlay infiniteLoop onChange={retornaItemSelecionado} interval={4000} transitionTime={700} width={410} className='crsl' showThumbs={false} showIndicators={false}>
+        <Carousel autoPlay infiniteLoop onChange={retornaItemSelecionado} interval={4000} transitionTime={700} width={210} className='crsl' showThumbs={false} showIndicators={false}>
             {
                 items.map((item, index) =>
                     <div style={{ maxHeight: '65rem' }} key={index} className="zoom">

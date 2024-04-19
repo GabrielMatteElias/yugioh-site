@@ -52,9 +52,13 @@ export default class Api {
         }
     }
 
+    // https://db.ygoprodeck.com/api/v7/cardinfo.php?language=pt&archetype=Blue-Eyes
+
     async getCards() {
         try {
             const resposta = await axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
+            console.log(resposta);
+
             if (resposta && resposta.data) {
                 return resposta.data.data
             }

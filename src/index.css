@@ -7,21 +7,42 @@
 
 :root {
   font-size: 62.5%;
-  font-family: "Handel Gothic", Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
 
 /* tirar padding dos cards */
-.css-46bh2p-MuiCardContent-root:last-child{
+.css-46bh2p-MuiCardContent-root:last-child {
   padding-bottom: 0px !important;
 }
 
-.css-bhp9pd-MuiPaper-root-MuiCard-root{
-  overflow: visible !important;
-}
-.css-s18byi{
+.css-bhp9pd-MuiPaper-root-MuiCard-root {
   overflow: visible !important;
 }
 
-li{
+.css-s18byi {
+  overflow: visible !important;
+}
+
+li {
   list-style-type: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  /* largura da barra de rolagem */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  /* cor do fundo da barra de rolagem */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  /* cor do controle da barra de rolagem */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  /* cor do controle da barra de rolagem quando hover */
 }
