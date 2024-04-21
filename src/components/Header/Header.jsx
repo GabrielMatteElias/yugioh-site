@@ -1,14 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 import './Header.css'
 
-const MenuSuperior = (props) => {
-    const {
-        nomesCaminho
-    } = props;
-
+const MenuSuperior = () => {
     return (
         <header className='header'>
             <nav>

@@ -18,7 +18,7 @@ const CarouselComponent = (props) => {
             {
                 items.map((item, index) =>
                     <div style={{ maxHeight: '65rem' }} key={index} className="zoom">
-                        <img src={`${item.card_images[0].image_url_cropped}`} height={412}/>
+                        <img src={`${item.card_images[0].image_url_cropped}`} height={412} alt='Card'/>
                         <p className="legend">{item.name}</p>
                     </div>
                 )

@@ -1,7 +1,6 @@
 .container-explore {
     background-color: #27292d;
-    display: grid;
-    grid-template-columns: 50% 50%;
+    display: flex;
 }
 
 .info-section {
@@ -13,11 +12,9 @@
     flex-direction: column;
     gap: 1rem;
     position: sticky;
-    top: 0;
+    top: 8%;
 
-    width: 60rem;
     overflow-y: auto;
-    max-height: 90vh;
 }
 
 .info-card-empty {
@@ -26,10 +23,31 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    padding-left: 1.3rem;
 }
 
 .card-img-info {
     display: flex;
+}
+
+.selected {
+    animation: rotateY 300ms ease;
+}
+
+@keyframes rotateY {
+    0% {
+        transform: rotateY(180deg);
+        filter: brightness(0);
+    }
+
+    50% {
+        transform: rotateY(90deg);
+    }
+
+    100% {
+        transform: rotateY(0deg);
+    }
 }
 
 .info-card div {
@@ -100,7 +118,19 @@
     list-style: none;
 }
 
-.grid-info-card li {
+.grid-info-card div {
+    display: flex;
+    gap: 1.2rem;
+    background-color: #1f1e1e;
+    border-radius: 5px;
+}
+
+.grid-info-card div li{
+    width: auto;
+    background-color: none;
+}
+
+.card-list{
     background-color: #1f1e1e;
     padding: 0.5rem;
     border-radius: 5px;
@@ -150,8 +180,9 @@
 .filter-card input {
     outline: none;
     border: none;
+    border-radius: .4rem;
 
-    height: 3rem;
+    height: 3.2rem;
     width: 12rem;
 
     padding-left: 0.5rem;
@@ -162,7 +193,7 @@
 }
 
 .filter-card input:focus {
-    box-shadow: 0px 0px 8px #fff;
+    box-shadow: 0px 0px 2px #fff;
 }
 
 .grid-library {
@@ -182,6 +213,11 @@
 .card-library:hover {
     transform: scale(1.1);
     filter: brightness(1);
+    box-shadow: 0px 0px 20px #f2f2f2;
+}
+
+#card-library:active~.card-library {
+    transform: rotateY(180deg);
 }
 
 .filter-card {

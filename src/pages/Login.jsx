@@ -1,21 +1,16 @@
 //Importação das bibliotecas utilizadas
-import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-
-//Importação das imagens
 
 //Importação da estilização
 import "./Login.css";
+
 import Alert from '@mui/material/Alert';
-//Importação da variavel de conecxão com o backend
-import Api from '../Services/Api';
 import { validar_senha, validar_usuario } from '../Utils/Validadores';
 
 //Carregamento
 import CircularProgress from '@mui/material/CircularProgress';
 
 //instanciando a classe de conexão com backend
-const userService = new Api()
 
 const Login = () => {
 
@@ -26,14 +21,12 @@ const Login = () => {
     /* ===#===#=== Variável de mensagem de erro ===#===#===  */
     const [erro, setErro] = useState('')
 
-    /* ===#===#=== variavel para navageção entre as páginas ===#===#===  */
-    const navigate = useNavigate();
-
     /* ===#===#=== Botão login ===#===#===  */
     const handleClique = async (e) => {
         e.preventDefault();
 
         setLoading(true)
+        setErro('erro')
 
         // const response = await userService.login(usuario, base64_encode(senha))
         // if (response === true) { // recebeu retorno do backend, vai navegar para o menu com o navigate

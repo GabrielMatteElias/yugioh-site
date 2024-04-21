@@ -9,10 +9,10 @@ class Explorar extends React.Component {
         super(props);
         this.state = {
             cards: [],
+            archetypes: [],
             cardSelecionado: {},
             loading: true,
         }
-
     }
 
     async componentDidMount() {
@@ -31,21 +31,27 @@ class Explorar extends React.Component {
 
             return numerosAleatorios;
         }
+
         const randomCards = getRandomNumbers(response);
+        const responseArchetypes = await userService.getArchetypes()
+        
         this.setState({ loading: false })
         this.setState({ cards: randomCards })
-
-        console.log(randomCards);
+        this.setState({ archetypes: responseArchetypes })
     }
 
     render() {
         if (this.state.loading) {
-            <p>Carregando...</p>
-            return
+            return (
+                <div style={{ textAlign: 'center', fontSize: '1.3rem', color: '#fff', backgroundColor: '#27292d', height: '100vh'}}>
+                    <p style={{ paddingTop: '2rem' }}>Carregando...</p>
+                </div>
+            )
+
         }
         return (
             <div style={{ height: '100%' }}>
-                <LibraryComponent cards={this.state.cards} />
+                <LibraryComponent cards={this.state.cards} archetypes={this.state.archetypes}/>
             </div>
         );
     }

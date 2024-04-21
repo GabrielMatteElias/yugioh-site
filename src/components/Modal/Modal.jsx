@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 
 const style = {
@@ -18,22 +17,27 @@ export default function BasicModal(props) {
     const {
         botao,
         conteudo,
-        largura
+        classe
     } = props
+
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+
     return (
         <div>
-            <Button onClick={handleOpen} sx={{ cursor: 'zoom-in' }}><img src={botao} /></Button>
+            <Button onClick={handleOpen} sx={{ cursor: 'zoom-in' }}>
+                <img src={botao} alt='Card' className={classe} />
+            </Button>
             <Modal
                 open={open}
                 onClose={handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
+
             >
                 <Box sx={style}>
-                    <img src={conteudo} width={largura}/>
+                    <img src={conteudo} width={500} alt='Cards' />
                 </Box>
             </Modal>
         </div>

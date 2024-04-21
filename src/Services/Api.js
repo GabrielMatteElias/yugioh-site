@@ -56,11 +56,52 @@ export default class Api {
 
     async getCards() {
         try {
-            const resposta = await axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
+            const resposta = await axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?race=Aqua&language=pt')
             console.log(resposta);
 
             if (resposta && resposta.data) {
                 return resposta.data.data
+            }
+        } catch (error) {
+            if (error.code === 'ECONNABORTED') {
+                // timeout da requisição
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Tempo limite excedido! Tente novamente',
+                    confirmButtonColor: "#ef7c00",
+                })
+            } else if (error.response.data.detail === "Token inválido ou expirado") {
+                // outras exceções
+                Swal.fire({
+                    icon: 'error',
+                    text: 'Sessão expirada favor logar novamente!',
+                    confirmButtonColor: "#ef7c00",
+                }).then(function () {
+                    sessionStorage.clear()
+                    window.location.href = './login'
+                });
+                setTimeout(() => {
+                    sessionStorage.clear()
+                    window.location.href = './login'
+                }, 5000)
+            } else {
+                // outras exceções
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro inesperado. Favor contatar o desenvolvimento!',
+                    confirmButtonColor: "#ef7c00",
+                })
+            }
+            return []
+        }
+    }
+
+    async getArchetypes() {
+        try {
+            const resposta = await axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
+
+            if (resposta && resposta.data) {
+                return resposta.data
             }
         } catch (error) {
             if (error.code === 'ECONNABORTED') {

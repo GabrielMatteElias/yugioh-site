@@ -14,7 +14,7 @@ export default function RangeSlider() {
     };
 
     return (
-        <Box sx={{ width: 125, paddingLeft: '1rem'}}>
+        <Box sx={{ width: 105, paddingLeft: '1rem'}}>
             <Slider
                 getAriaLabel={() => 'Level'}
                 value={value}
