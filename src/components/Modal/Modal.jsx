@@ -37,7 +37,7 @@ export default function BasicModal(props) {
 
             >
                 <Box sx={style}>
-                    <img src={conteudo} width={500} alt='Cards' />
+                    <img src={conteudo} width={420} alt='Cards' />
                 </Box>
             </Modal>
         </div>

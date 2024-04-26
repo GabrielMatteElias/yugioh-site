@@ -6,7 +6,6 @@ export default function Select(props) {
         setValor,
         valor
     } = props
-    console.log(valor);
     return (
         <select value={valor} onChange={(e) => setValor(e.target.value)}>
             <option value=''></option>

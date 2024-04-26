@@ -1,3 +1,4 @@
+import { Language } from '@mui/icons-material'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 
@@ -54,36 +55,36 @@ export default class Api {
 
     // https://db.ygoprodeck.com/api/v7/cardinfo.php?language=pt&archetype=Blue-Eyes
 
-    async getCards() {
+    async getCards(nome, tipo, archetype, frameType, race) {
+        const filters = {
+            name: nome,
+            type: tipo,
+            archetype: archetype,
+            frameType: frameType,
+            race: race
+        }
+        //console.log('API', filters);
+
+        const apiUrl = 'https://db.ygoprodeck.com/api/v7/cardinfo.php';
+        const queryParams = [];
+        for (const key in filters) {
+            if (filters[key]) {
+                queryParams.push(`${key}=${encodeURIComponent(filters[key])}`);
+            }
+        }
+        const queryString = queryParams.join('&');
         try {
-            const resposta = await axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?race=Aqua&language=pt')
-            console.log(resposta);
+            const resposta = await axios.get(`${apiUrl}?${queryString}`);
 
             if (resposta && resposta.data) {
                 return resposta.data.data
             }
+            return []
         } catch (error) {
-            if (error.code === 'ECONNABORTED') {
-                // timeout da requisição
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Tempo limite excedido! Tente novamente',
-                    confirmButtonColor: "#ef7c00",
-                })
-            } else if (error.response.data.detail === "Token inválido ou expirado") {
-                // outras exceções
-                Swal.fire({
-                    icon: 'error',
-                    text: 'Sessão expirada favor logar novamente!',
-                    confirmButtonColor: "#ef7c00",
-                }).then(function () {
-                    sessionStorage.clear()
-                    window.location.href = './login'
-                });
-                setTimeout(() => {
-                    sessionStorage.clear()
-                    window.location.href = './login'
-                }, 5000)
+            console.log(error);
+
+            if (error.response.data.error.includes('No card matching')) {
+                return false
             } else {
                 // outras exceções
                 Swal.fire({

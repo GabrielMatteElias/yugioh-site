@@ -3,6 +3,7 @@ import './Home.css';
 import PaginaBase from './PaginaBase'
 import Carousel from '../components/Carousel/Carousel';
 import Api from '../Services/Api';
+import { getRandomNumbers } from '../Utils/DevolverItensAleatorios';
 const userService = new Api()
 
 class PaginaInicial extends React.Component {
@@ -18,22 +19,9 @@ class PaginaInicial extends React.Component {
     }
 
     async componentDidMount() {
-        const response = await userService.getCards()
-        const getRandomNumbers = (array) => {
-            const numerosAleatorios = [];
-            const tamanhoArray = array.length;
+        const response = await userService.getCards()        
 
-            while (numerosAleatorios.length < 25) {
-                const indiceAleatorio = Math.floor(Math.random() * tamanhoArray);
-                if (!numerosAleatorios.includes(array[indiceAleatorio])) {
-                    numerosAleatorios.push(array[indiceAleatorio]);
-                }
-            }
-
-            return numerosAleatorios;
-        }
-
-        const randomCards = getRandomNumbers(response);
+        const randomCards = getRandomNumbers(response, 15);
 
         this.setState({ cards: randomCards })
         this.setState({ cardSelecionado: randomCards[0] })
@@ -42,20 +30,15 @@ class PaginaInicial extends React.Component {
     }
 
     retornoIndiceCard(indice){
-        console.log('aqui', indice);
-
         const cardSelecionado = this.state.cards[indice]
         this.setState({ cardSelecionado: cardSelecionado })
-
     }
-
 
     render() {
         if (this.state.loading) {
             <p>Carregando...</p>
             return
         }
-        console.log(this.state.cards);
         return (
             <section className='container-carrosel'>
                 <div className='bg-home-first-section'>

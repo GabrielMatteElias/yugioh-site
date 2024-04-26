@@ -8,7 +8,7 @@ const CarouselComponent = (props) => {
         items,
         retornoIndiceCard
     } = props
-    console.log(items);
+
     const retornaItemSelecionado = (indice) => {
         retornoIndiceCard(indice)
     }

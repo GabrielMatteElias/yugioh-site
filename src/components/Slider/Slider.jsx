@@ -6,18 +6,20 @@ function valuetext(value) {
     return `${value}`;
 }
 
-export default function RangeSlider() {
-    const [value, setValue] = React.useState([0, 12]);
-
+export default function RangeSlider(props) {
+    const {
+        valor, 
+        setValor
+    } = props
     const handleChange = (event, newValue) => {
-        setValue(newValue);
+        setValor(newValue);
     };
 
     return (
         <Box sx={{ width: 105, paddingLeft: '1rem'}}>
             <Slider
                 getAriaLabel={() => 'Level'}
-                value={value}
+                value={valor}
                 onChange={handleChange}
                 valueLabelDisplay="auto"
                 getAriaValueText={valuetext}

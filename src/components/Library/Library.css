@@ -5,6 +5,7 @@
 
 .info-section {
     position: relative;
+    max-width: 50.4rem;
 }
 
 .info-card {
@@ -125,12 +126,12 @@
     border-radius: 5px;
 }
 
-.grid-info-card div li{
+.grid-info-card div li {
     width: auto;
     background-color: none;
 }
 
-.card-list{
+.card-list {
     background-color: #1f1e1e;
     padding: 0.5rem;
     border-radius: 5px;
@@ -156,6 +157,7 @@
 .container-library {
     display: flex;
     justify-content: center;
+    overflow-y: auto;
 }
 
 .library-div {
