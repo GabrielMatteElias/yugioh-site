@@ -1,11 +1,9 @@
-import * as React from 'react';
-import CircularProgress from '@mui/material/CircularProgress';
-import Box from '@mui/material/Box';
+import './Spinner.css'
 
 export default function CircularIndeterminate() {
     return (
-        <Box sx={{ display: 'flex' }}>
-            <CircularProgress sx={{ color: '#f2f2f2 ' }}/>
-        </Box>
+        <div class="spinner-container">
+            <div class="spinner"></div>
+        </div>
     );
 }

@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react'
 import './Library.css'
 import MenuBookIcon from '@mui/icons-material/MenuBook';
@@ -112,11 +111,13 @@ const LibraryComponent = (props) => {
         archetypes
     } = props
 
+    //Formata select archetypes
     const formatarArchetypes = archetypes.map(item => ({
         label: item.archetype_name,
         value: item.archetype_name
     }));
 
+    //Set cards library
     useEffect(() => {
         setCardsLibrary(cards)
     }, [])
@@ -135,6 +136,7 @@ const LibraryComponent = (props) => {
 
     const [carregamento, setCarregamento] = useState(false);
 
+    //Alterar carta mostrada na secao de informacoes
     const handleSelectCard = (card) => {
         setCartaSelecionada(card)
         setGirarCarta('')
@@ -143,6 +145,7 @@ const LibraryComponent = (props) => {
         }, 1)
     }
 
+    //Padroniza letras maiusculas e minusculas nas informacoes
     const padronizarLetras = (palavra) => {
         if (palavra && typeof palavra === 'string') {
             const palavraFormatada = palavra.charAt(0).toUpperCase() + palavra.slice(1).toLowerCase()
@@ -150,26 +153,20 @@ const LibraryComponent = (props) => {
         }
         return '-'
     }
-    console.log(cardsLibradry);
-    // Pesquisar dados quando os filtros mudarem
-    // useEffect(() => {
-    //     setCarregamento(true)
-    //     const debounceFetchCards = setTimeout(() => {
-    //         const fetchData = async () => {
-    //             //Requisição à API usando os valores dos filtros
-    //             const response = await userService.getCards(nome, tipo, archetype, frameType, race, level)
-    //             if (!response) {
-    //                 setCardsLibrary([])
-    //             } else {
-    //                 const limitarMaxCartas = getRandomNumbers(response, 100);
-    //                 setCardsLibrary(limitarMaxCartas)
-    //             }
-    //             setCarregamento(false)
-    //         }
-    //         fetchData()
-    //     }, 500)
-    //     return () => clearTimeout(debounceFetchCards);
-    // }, [nome || tipo || archetype || frameType || race || level])
+
+    // Pesquisar dados quando conforme filtros
+    const fetchData = async () => {
+        //Requisição à API usando os valores dos filtros
+        const response = await userService.getCards(nome, tipo, archetype, frameType, race, level)
+        console.log(response);
+        if (!response) {
+            setCardsLibrary([])
+        } else {
+            const limitarMaxCartas = getRandomNumbers(response, 100);
+            setCardsLibrary(limitarMaxCartas)
+        }
+        setCarregamento(false)
+    }
 
     return (
         <section className='container-explore'>
@@ -266,7 +263,7 @@ const LibraryComponent = (props) => {
                 <div className='library-div'>
                     <div className='filter-card'>
                         <label>
-                            <span> Name</span>
+                            <span>Name</span>
                             <input type='text' onChange={(e) => setNome(e.target.value)} />
                         </label>
                         <label>
@@ -289,13 +286,14 @@ const LibraryComponent = (props) => {
                             <span>Level</span>
                             <Slider valor={level} setValor={setLevel} />
                         </label>
+                        <div>
+                            <button className='search-explorer' onClick={fetchData}>Search</button>
+                        </div>
                     </div>
                     <div className='grid-library'>
 
                         {carregamento ?
-                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#f2f2f2', width: '100%', height: '67.8vh' }}>
                                 <CircularIndeterminate />
-                            </div>
                             :
                             cardsLibradry.length > 0 ?
                                 cardsLibradry.map(item =>

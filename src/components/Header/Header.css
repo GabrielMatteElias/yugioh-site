@@ -1,7 +1,5 @@
 .header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
     height: 7.4rem;
 
     background-color: #222222;
@@ -15,8 +13,21 @@
     font-family: "Handel Gothic", Helvetica, Arial, sans-serif;
 }
 
+
+.header img {
+    margin-bottom: -3.4rem;
+    width: 19rem;
+
+    position: relative;
+    z-index: 1;
+    left: 8rem;
+    top: 2rem;
+    pointer-events: auto;
+}
+
 .header-options {
     width: 45rem;
+    padding-left: 40rem;
     display: flex;
     justify-content: space-around;
     align-items: center;

@@ -63,7 +63,7 @@ export default class Api {
             frameType: frameType,
             race: race
         }
-        //console.log('API', filters);
+        console.log('API', filters);
 
         const apiUrl = 'https://db.ygoprodeck.com/api/v7/cardinfo.php';
         const queryParams = [];

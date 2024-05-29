@@ -3,6 +3,7 @@ import PaginaBase from './PaginaBase'
 import Api from '../Services/Api';
 import LibraryComponent from '../components/Library/Library';
 import { getRandomNumbers } from '../Utils/DevolverItensAleatorios';
+import CircularIndeterminate from '../components/SpinnerProgress/SpinnerProgress';
 const userService = new Api()
 
 class Explorar extends React.Component {
@@ -31,8 +32,8 @@ class Explorar extends React.Component {
     render() {
         if (this.state.loading) {
             return (
-                <div style={{ textAlign: 'center', fontSize: '1.3rem', color: '#fff', backgroundColor: '#27292d', height: '100vh'}}>
-                    <p style={{ paddingTop: '2rem' }}>Carregando...</p>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#27292d', height: '100vh'}}>
+                    <CircularIndeterminate />
                 </div>
             )
 

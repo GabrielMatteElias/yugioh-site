@@ -6,20 +6,16 @@ const PaginaBase = (WrappedComponent) => {
     return class extends React.Component {
         constructor(props) {
             super(props);
-            this.state = {
-                nomesCaminho: []
-            };
+            
         }
-        atualizarCaminhoHistorico = (novoCaminho) => {
-            this.setState({ nomesCaminho: novoCaminho });
-        };
+        
 
         render() {
             return (
                 <div className='main-container'>
-                    <MenuSuperior nomesCaminho={this.state.nomesCaminho} />
+                    <MenuSuperior />
                     <main className='page-container'>
-                        <WrappedComponent atualizarCaminhoHistorico={this.atualizarCaminhoHistorico} {...this.props}>
+                        <WrappedComponent>
                             {this.props.children}
                         </WrappedComponent>
                     </main>
