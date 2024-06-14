@@ -55,13 +55,11 @@ export default class Api {
 
     // https://db.ygoprodeck.com/api/v7/cardinfo.php?language=pt&archetype=Blue-Eyes
 
-    async getCards(nome, tipo, archetype, frameType, race) {
+    async getCards(nome, tipo) {
         const filters = {
             name: nome,
             type: tipo,
-            archetype: archetype,
-            frameType: frameType,
-            race: race
+            
         }
         console.log('API', filters);
 
@@ -73,9 +71,17 @@ export default class Api {
             }
         }
         const queryString = queryParams.join('&');
+        console.log(queryString);
         try {
-            const resposta = await axios.get(`${apiUrl}?${queryString}`);
-
+            const resposta = await axios.get(`${apiUrl}?${queryString}`,
+            {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                timeout: 30000 //30 segundos
+            }
+            );
+            console.log(resposta);
             if (resposta && resposta.data) {
                 return resposta.data.data
             }

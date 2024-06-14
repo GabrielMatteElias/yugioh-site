@@ -61,8 +61,20 @@ class PaginaInicial extends React.Component {
                         </div>
                     </div>
                     <div className='container-to-explore'>
-                        <Link to={'/explorar'} className='btn-to-explore'>See More Cards<ArrowForwardIcon/></Link>
+                        <Link to={'/explorar'} className='btn-to-explore'>See More Cards<ArrowForwardIcon /></Link>
                     </div>
+                </section>
+
+                <section className='about'>
+                    <div>
+                    <h2>Sobre Yu-Gi-Oh!</h2>
+                    <p>
+                        Yu-Gi-Oh! é um universo emocionante baseado em um card game com Monstros, Magias e Armadilhas! A franquia Yu-Gi-Oh! Inclui mangás,
+                        séries de televisão, uma variedade de videogames, o Yu-Gi-Oh! ESTAMPAS ILUSTRADAS, e muito mais! Este pequeno guia irá ajudá-lo a
+                        se familiarizar com um pouco do que Yu-Gi-Oh! tem a oferecer.
+                    </p>
+                    </div>
+                    
                 </section>
 
                 <section className='bg-home-second-section'>
@@ -81,6 +93,7 @@ class PaginaInicial extends React.Component {
                         </ul>
                     </div>
                 </section>
+
                 <Footer />
             </section>
         );

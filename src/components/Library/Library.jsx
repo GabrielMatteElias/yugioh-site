@@ -157,7 +157,7 @@ const LibraryComponent = (props) => {
     // Pesquisar dados quando conforme filtros
     const fetchData = async () => {
         //Requisição à API usando os valores dos filtros
-        const response = await userService.getCards(nome, tipo, archetype, frameType, race, level)
+        const response = await userService.getCards(nome, tipo)
         console.log(response);
         if (!response) {
             setCardsLibrary([])
@@ -264,13 +264,13 @@ const LibraryComponent = (props) => {
                     <div className='filter-card'>
                         <label>
                             <span>Name</span>
-                            <input type='text' onChange={(e) => setNome(e.target.value)} />
+                            <input type='text' name='name' onChange={(e) => setNome(e.target.value)} />
                         </label>
                         <label>
                             <span>Type</span>
-                            <Select dados={listaType} setValor={setTipo} valor={tipo} />
+                            <Select dados={listaType} name='type' setValor={setTipo} valor={tipo} />
                         </label>
-                        <label>
+                        {/* <label>
                             <span>FrameType</span>
                             <Select dados={listaFrameTypes} setValor={setFrameType} valor={frameType} />
                         </label>
@@ -285,9 +285,9 @@ const LibraryComponent = (props) => {
                         <label>
                             <span>Level</span>
                             <Slider valor={level} setValor={setLevel} />
-                        </label>
+                        </label> */}
                         <div>
-                            <button className='search-explorer' onClick={fetchData}>Search</button>
+                            <button className='search-explorer' name='btn' onClick={fetchData}>Search</button>
                         </div>
                     </div>
                     <div className='grid-library'>

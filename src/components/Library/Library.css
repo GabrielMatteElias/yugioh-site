@@ -1,6 +1,7 @@
 .container-explore {
     background-color: #27292d;
     display: flex;
+    margin-bottom: 2rem;
 }
 
 .info-section {

@@ -11,4 +11,5 @@
     flex-grow: 1;
     max-height: calc(100vh - 70px);
     min-height: 30rem;
+    padding-bottom: 1rem;
 }
