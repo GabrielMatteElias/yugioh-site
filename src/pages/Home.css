@@ -81,6 +81,26 @@
   padding-top: 1.5rem;
 }
 
+.home-products {
+  height: 33rem;
+
+  text-align: center;
+
+  padding-top: 7rem;
+
+  font-size: 3.2rem;
+
+  background-image: url(../img/border-sections.png);
+  background-size: 100% 8px, 7rem;
+  background-repeat: no-repeat, repeat;
+  background-position: 60% 0, auto;
+  box-shadow: inset 0px 0px 55px rgb(0, 0, 0);
+}
+
+.home-products h2 {
+  color: #212c81;
+}
+
 .bg-home-second-section {
   background-color: #090222;
   color: #f2f2f2;

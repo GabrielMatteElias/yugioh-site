@@ -59,7 +59,7 @@ export default class Api {
         const filters = {
             name: nome,
             type: tipo,
-            
+
         }
         console.log('API', filters);
 
@@ -74,12 +74,12 @@ export default class Api {
         console.log(queryString);
         try {
             const resposta = await axios.get(`${apiUrl}?${queryString}`,
-            {
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                timeout: 30000 //30 segundos
-            }
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    timeout: 30000 //30 segundos
+                }
             );
             console.log(resposta);
             if (resposta && resposta.data) {
